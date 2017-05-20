@@ -1,0 +1,22 @@
+package com.example.yenma.clienteapp;
+
+import android.app.Application;
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
+
+/**
+ * * clase de ClienteApp con extension a  Application (importado)
+ * para que que funcione el log en facebook
+ * @author yenma
+ * @version 08/05/2017/B
+ */
+
+public class ClienteApp extends Application{
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        FacebookSdk.sdkInitialize(getApplicationContext());
+        AppEventsLogger.activateApp(this);
+
+    }
+}
